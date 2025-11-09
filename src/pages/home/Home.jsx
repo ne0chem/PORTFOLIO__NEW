@@ -92,10 +92,10 @@ export default function Home() {
                   <div className="skills__progress-bar">
                     <div
                       className="skills__progress-fill"
-                      style={{ width: "100%" }}
+                      style={{ width: "95%" }}
                     ></div>
                   </div>
-                  <span className="skills__progress-percent">100%</span>
+                  <span className="skills__progress-percent">95%</span>
                 </div>
 
                 <div className="skills__progress-item">
@@ -103,10 +103,10 @@ export default function Home() {
                   <div className="skills__progress-bar">
                     <div
                       className="skills__progress-fill"
-                      style={{ width: "80%" }}
+                      style={{ width: "85%" }}
                     ></div>
                   </div>
-                  <span className="skills__progress-percent">80%</span>
+                  <span className="skills__progress-percent">85-90%</span>
                 </div>
 
                 <div className="skills__progress-item">
@@ -114,10 +114,10 @@ export default function Home() {
                   <div className="skills__progress-bar">
                     <div
                       className="skills__progress-fill"
-                      style={{ width: "50%" }}
+                      style={{ width: "65%" }}
                     ></div>
                   </div>
-                  <span className="skills__progress-percent">50%</span>
+                  <span className="skills__progress-percent">65-75%</span>
                 </div>
 
                 <div className="skills__progress-item">
@@ -125,10 +125,10 @@ export default function Home() {
                   <div className="skills__progress-bar">
                     <div
                       className="skills__progress-fill"
-                      style={{ width: "60%" }}
+                      style={{ width: "65%" }}
                     ></div>
                   </div>
-                  <span className="skills__progress-percent">60%</span>
+                  <span className="skills__progress-percent">65-70%</span>
                 </div>
 
                 <div className="skills__progress-item">
@@ -143,7 +143,9 @@ export default function Home() {
                 </div>
 
                 <div className="skills__progress-item">
-                  <span className="skills__progress-name">TypeScript</span>
+                  <span className="skills__progress-name">
+                    TypeScript <span className="skills__note">(изучаю)</span>
+                  </span>
                   <div className="skills__progress-bar">
                     <div
                       className="skills__progress-fill"
@@ -320,6 +322,73 @@ export default function Home() {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+        <section className="myFitsandCurs">
+          <div className="myFitsandCurs__grid">
+            <div className="myFits__container">
+              <h1 className="home__title">Мой подход к работе</h1>
+              <p className="home__text myFits__text">
+                Верю, что выдающийся фронтенд — это там, где безупречный код
+                встречается с продуманным дизайном. Моя цель — не просто
+                реализовать макет, а создать живой, отзывчивый интерфейс,
+                который решит задачу пользователя и вызовет у него эмоциональный
+                отклик. Для этого я фокусируюсь на чистоте кода,
+                производительности и постоянном изучении новых технологий для
+                создания по-настоящему "вау" эффектов.
+              </p>
+              <p className="home__text myFits__text">
+                Постоянно изучаю новые технологии и лучшие практики, чтобы
+                внедрять в проекты современные и интерактивные элементы,
+                создающие то самое "вау"-ощущение — будь то плавные анимации или
+                сложная интерактивная логика.
+              </p>
+            </div>
+
+            <div className="curs__container">
+              <h1 className="home__title">Курсы и непрерывное развитие</h1>
+              <p className="home__text myFits__text">
+                Frontend-разработчик | [Nordic IT Shool]
+                <span className="highlight">
+                  8-месячная интенсивная программа, завершена на "отлично".
+                </span>
+                Получила прочную базу в Frontend (HTML, CSS, SASS, React) и
+                базовое понимание Backend (Node.js). Успешно применила
+                полученные знания в учебных и коммерческих проектах разной
+                сложности Изучила и применяла компонентный подход, методологии
+                БЭМ и принципы адаптивной верстки.
+              </p>
+              <p className="home__text myFits__text">
+                После курса: не остановилась на достигнутом и продолжила
+                углублять знания через узкоспециализированные интенсивы, где
+                изучила и внедрила в свои проекты современные библиотеки для
+                анимаций (WOW.js, Animate.css).
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="contacts">
+          <h1 className="home__title">Связаться со мной</h1>
+          <div className="contacts__grid">
+            <a
+              href="mailto:brenkoangelina@gmail.com?subject=Предложение для Frontend разработчика&body=Добрый день, Ангелина! 
+  
+Мы просмотрели ваше портфолио и хотели бы обсудить..."
+              className="contact-card"
+            >
+              <img className="icon" src="./gmail.svg" alt="" />
+              <span>Email</span>
+            </a>
+
+            <a href="https://t.me/ne_o_chem11" className="contact-card">
+              <img className="icon" src="./telegram.svg" alt="" />
+              <span>Telegram</span>
+            </a>
+
+            <a href="https://github.com/ne0chem" className="contact-card">
+              <img className="icon" src="./github_dark.svg" alt="" />
+              <span>GitHub</span>
+            </a>
           </div>
         </section>
       </div>
