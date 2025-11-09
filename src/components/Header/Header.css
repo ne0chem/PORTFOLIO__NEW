@@ -191,6 +191,131 @@
       );
   }
 }
+/* Стили для модалки */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  backdrop-filter: blur(10px);
+  /* Добавляем эти свойства для гарантии центрирования */
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-content.contacts {
+  background: black;
+  border: var(--border);
+  border-radius: 20px;
+  box-shadow: var(--box--shadow--hover);
+  padding: 50px 40px;
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  /* Убираем margin который может сдвигать */
+  margin: 0;
+  /* Добавляем для точного позиционирования */
+  position: relative;
+  top: 0;
+  left: 0;
+  transform: none;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  background: none;
+  border: none;
+  font-size: 2.5em;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  line-height: 1;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modal-close:hover {
+  color: var(--primary-green);
+  text-shadow: var(--text--shadow);
+  background: rgba(97, 220, 163, 0.1);
+  transform: scale(1.1);
+}
+/*связать со мной*/
+.contacts {
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.contacts__grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 30px 20px;
+  background: var(--bg--container);
+  border: var(--border);
+  border-radius: 16px;
+  box-shadow: var(--box-shadow);
+  text-decoration: none;
+  color: var(--text-light);
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.contact-card:hover {
+  box-shadow: var(--box--shadow--hover);
+  transform: translateY(-5px);
+  color: var(--primary-green);
+  text-shadow: var(--text--shadow);
+}
+
+.icon {
+  font-size: 2.5em;
+  height: 50px;
+  width: 50px;
+  filter: drop-shadow(0 0 10px rgba(97, 220, 163, 0.3));
+}
+.modal-overlay.fade-out {
+  animation: ultraSmoothFadeOut 0.7s ease-in-out forwards;
+}
+
+@keyframes ultraSmoothFadeOut {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    backdrop-filter: blur(10px);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+    backdrop-filter: blur(0px);
+  }
+}
+.contact-card span {
+  font-weight: 500;
+}
 /* Адаптивность */
 @media (max-width: 1480px) {
   .header__container {

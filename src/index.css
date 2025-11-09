@@ -11,7 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
+html {
+  scrollbar-gutter: stable; /* Резервирует место под скролл */
+}
 /* Стили для основного лейаута */
 .layout {
   min-height: 100vh;
