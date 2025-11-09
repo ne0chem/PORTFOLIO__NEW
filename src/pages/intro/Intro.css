@@ -1,0 +1,199 @@
+:root {
+  --primary-green: #61dca3;
+  --primary-blue: #61b3dc;
+  --text-light: #e8f5e8;
+  --text-muted: #b0b0b0;
+  --glass-bg: rgba(43, 69, 57, 0.25);
+  --glass-border: rgba(97, 220, 163, 0.2);
+}
+
+.app {
+  position: relative;
+  height: 100vh;
+  background: #000000;
+  overflow: hidden;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+/* Минималистичный блок */
+.simple-block {
+  padding: 50px 40px;
+  background: var(--glass-bg);
+  border-radius: 20px;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid var(--glass-border);
+  text-align: center;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Имя */
+.name {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-light);
+  margin: 0 0 10px 0;
+  text-shadow: 0 0 15px rgba(97, 220, 163, 0.3);
+  letter-spacing: 1px;
+}
+
+/* Должность */
+.role {
+  font-size: 1.2rem;
+  color: var(--primary-green);
+  margin: 0 0 30px 0;
+  font-weight: 400;
+  text-shadow: 0 0 10px rgba(97, 220, 163, 0.4);
+}
+
+/* Опыт */
+.experience {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+.experience-badge {
+  background: rgba(97, 220, 163, 0.2);
+  color: var(--primary-green);
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(97, 220, 163, 0.3);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+/* Описание */
+.description {
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.description p {
+  color: var(--text-light);
+  margin: 8px 0;
+  font-size: 1rem;
+  font-weight: 300;
+  text-shadow: 0 0 8px rgba(232, 245, 232, 0.3);
+}
+
+/* Кнопка */
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.enter-button {
+  position: relative;
+  background: rgba(97, 220, 163, 0.15);
+  border: 1px solid rgba(97, 220, 163, 0.3);
+  border-radius: 12px;
+  padding: 14px 32px;
+  color: var(--primary-green);
+  font-family: inherit;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  backdrop-filter: blur(10px);
+}
+
+.enter-button:hover {
+  background: rgba(97, 220, 163, 0.25);
+  border-color: rgba(97, 220, 163, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(97, 220, 163, 0.3),
+    0 0 0 1px rgba(97, 220, 163, 0.1);
+}
+
+.button-text {
+  position: relative;
+  z-index: 2;
+  text-shadow: 0 0 10px rgba(97, 220, 163, 0.5);
+}
+
+.button-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    45deg,
+    transparent 0%,
+    rgba(97, 220, 163, 0.1) 50%,
+    transparent 100%
+  );
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+.enter-button:hover .button-glow {
+  opacity: 1;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.02);
+  }
+}
+
+/* Анимации для перехода */
+@keyframes fadeOutUp {
+  to {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+  }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 0 20px;
+  }
+
+  .simple-block {
+    padding: 40px 30px;
+  }
+
+  .name {
+    font-size: 2rem;
+  }
+
+  .role {
+    font-size: 1.1rem;
+  }
+}

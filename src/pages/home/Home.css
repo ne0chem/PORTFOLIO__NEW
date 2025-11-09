@@ -1,0 +1,316 @@
+body {
+  background-color: black;
+}
+
+:root {
+  --box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(97, 220, 163, 0.1); /*тень */
+  --box--shadow--hover: 0 40px 80px rgba(97, 220, 163, 0.2),
+    0 0 0 1px rgba(97, 220, 163, 0.2); /*тень при наведении(или дефолтная, не опеределилась еще*/
+  --border: 1px solid rgba(97, 220, 163, 0.2); /*граница*/
+  --text--shadow: 0 0 20px rgba(97, 220, 163, 0.3); /*шадов бля зеленого текста*/
+  --text--shadow--white: 0 0 10px rgba(232, 245, 232, 0.3); /*шадов для белого текста*/
+
+  --bg--container: rgba(43, 69, 57, 0.1); /*цвет фона контейнера*/
+  /*цвета из другого css*/
+  --primary-green: #61dca3; /*зеленый текст( типо выделение)*/
+  --primary-blue: #61b3dc;
+  --text-light: #e8f5e8; /*стандартный текст */
+}
+.home__header {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 50px;
+}
+.home__image {
+  width: 400px;
+  height: 600px;
+  border-radius: 10px;
+  object-fit: cover;
+  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  box-shadow: var(--box-shadow);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.home__image:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  box-shadow: var(--box--shadow--hover);
+}
+.home__header-left {
+  max-width: 600px;
+  padding: 40px;
+  background: rgba(43, 69, 57, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: var(--border);
+  box-shadow: var(--box--shadow--hover);
+}
+
+.home__title {
+  font-size: 3rem;
+  font-weight: 300;
+  color: var(--text-light);
+  margin-bottom: 10px;
+  text-shadow: var(--text--shadow);
+  background: linear-gradient(45deg, var(--text-light), var(--primary-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home__subtitle {
+  font-size: 1.3rem;
+  color: var(--primary-green);
+  margin-bottom: 30px;
+  font-weight: 400;
+  text-shadow: 0 0 15px rgba(97, 220, 163, 0.4);
+}
+
+.home__text {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  text-shadow: var(--text--shadow--white);
+  font-weight: 300;
+}
+
+.home__descr {
+  font-size: 1.2rem;
+  color: var(--primary-green);
+  margin-bottom: 15px;
+  list-style: none;
+  text-shadow: 0 0 12px var(--text--shadow);
+  font-weight: 500;
+}
+
+.home__descr__text {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  text-shadow: var(--text--shadow--white);
+  font-weight: 300;
+}
+
+.home__descr__text::before {
+  content: "•";
+  color: var(--primary-green);
+  position: absolute;
+  left: 0;
+  text-shadow: var(--text--shadow);
+}
+
+.home__descr__text:last-child {
+  margin-bottom: 0;
+}
+
+.skills {
+  margin-top: 180px;
+}
+.skills__title {
+  margin-bottom: 180px;
+  text-align: center;
+}
+.skills__container {
+  display: flex;
+  justify-content: space-around;
+  padding: 40px;
+  background: var(--bg--container);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: var(--border);
+  box-shadow: var(--box--shadow--hover);
+}
+.skills__left {
+  width: 500px;
+}
+.skills__right {
+  width: 600px;
+  justify-content: center;
+  align-items: center;
+}
+.skills__progress {
+  position: relative;
+  top: 30%;
+}
+/*полоски*/
+.skills__progress-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 15px;
+}
+
+.skills__progress-name {
+  color: var(--text-light);
+  font-weight: 400;
+  min-width: 100px;
+  font-size: 0.95rem;
+}
+
+.skills__progress-bar {
+  flex: 1;
+  height: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.skills__progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-green), var(--primary-blue));
+  border-radius: 5px;
+  transition: width 1s ease-in-out;
+}
+
+.skills__progress-percent {
+  color: var(--primary-green);
+  font-weight: 500;
+  min-width: 40px;
+  text-align: right;
+  font-size: 0.9rem;
+  text-shadow: var(--text--shadow);
+}
+
+/*секция цели*/
+
+/* Development Section */
+.development {
+  padding: 80px 0;
+}
+
+.development__section {
+  margin-bottom: 60px;
+}
+
+.development__section:last-child {
+  margin-bottom: 0;
+}
+
+.development__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.development__card {
+  padding: 30px;
+  border-radius: 16px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.development__card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--box--shadow--hover);
+}
+
+.development__icon {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  height: 50px;
+  width: 50px;
+}
+
+/* Goals Section */
+.goals__list {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.goal__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.goal__check {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.goal__content {
+  flex: 1;
+}
+
+/*карточки*/
+.stek {
+  margin-top: 180px;
+  margin-bottom: 10px;
+}
+.stek__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1500px;
+  width: 100%;
+  margin-top: 100px;
+}
+
+.card {
+  height: 280px;
+  width: 200px;
+  perspective: 1000px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+  border-radius: 15px;
+  transform-origin: center;
+  transition-delay: 0.1s;
+}
+.card:hover {
+  box-shadow: var(--box--shadow--hover);
+}
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+  transition-delay: 0s;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.card-back {
+  color: var(--text-light);
+  text-shadow: var(--text--shadow--white);
+  transform: rotateY(180deg);
+  overflow-y: auto;
+  text-align: left;
+}
+
+.card-back p {
+  line-height: 1.5;
+  font-size: 0.9rem;
+}
