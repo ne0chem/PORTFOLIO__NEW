@@ -1,15 +1,17 @@
 import React from "react";
 import "./Home.css";
 import ThreadsBackground from "../../animation/ThreadsBackground/ThreadsBackground";
+import useWow from "../../animation/useWOW/useWow";
 
 export default function Home() {
+  useWow();
   return (
     <div className="home">
       <div className="content-container">
         <ThreadsBackground />
-        <section className="home__section">
+        <section className="home__section ">
           <div className="home__header">
-            <div className="home__header-left">
+            <div className="home__header-left wow animate__animated animate__backInLeft">
               <h1 className="home__title">Обо мне</h1>
               <h2 className="home__subtitle">Ангелина • Frontend Developer</h2>
               <p className="home__text">
@@ -38,14 +40,16 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="home__img">
+            <div className="home__img wow animate__animated animate__backInRight ">
               <img className="home__image" src="./img.jpg" alt="" />
             </div>
           </div>
         </section>
         <section className="skills ">
-          <h1 className="home__title skills__title">Фронтенд навыки</h1>
-          <div className="skills__container">
+          <h1 className="home__title skills__title wow animate__animated animate__backInDown">
+            Фронтенд навыки
+          </h1>
+          <div className="skills__container wow animate__animated animate__bounceInRight">
             <div className="skills__left">
               <div className="skills__item">
                 <h2 className="home__subtitle">UI/UX Дизайн</h2>
@@ -180,7 +184,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="stek">
+        <section className="stek wow animate__animated animate__jackInTheBox ">
           <h1 className="home__title">Технологический стек</h1>
           <div className="stek__container">
             <div class="card">
@@ -258,7 +262,7 @@ export default function Home() {
             <div className="development__section">
               <h2 className="home__title">Что изучаю сейчас</h2>
               <div className="development__grid">
-                <div className="development__card">
+                <div className="development__card  wow animate__animated animate__zoomInLeft">
                   <img className="development__icon" src="./ts.svg" alt="" />
                   <h3 className="home__subtitle">TypeScript</h3>
                   <p className="home__text">
@@ -267,7 +271,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="development__card">
+                <div className="development__card wow animate__animated animate__zoomInDown">
                   <img className="development__icon" src="./node.svg" alt="" />
                   <h3 className="home__subtitle">Node.js</h3>
                   <p className="home__text">
@@ -276,7 +280,7 @@ export default function Home() {
                   </p>
                 </div>
 
-                <div className="development__card">
+                <div className="development__card wow animate__animated animate__zoomInRight">
                   <img className="development__icon" src="./tws.svg" alt="" />
                   <h3 className="home__subtitle">Tailwind CSS</h3>
                   <p className="home__text">
@@ -290,7 +294,7 @@ export default function Home() {
 
             <div className="development__section">
               <h2 className="home__title">Мои цели</h2>
-              <div className="development__grid">
+              <div className="development__grid wow animate__animated animate__zoomInLeft">
                 <div className="development__card">
                   <div className="goal__content">
                     <h3 className="home__subtitle">Fullstack развитие</h3>
@@ -301,7 +305,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="development__card">
+                <div className="development__card wow animate__animated animate__zoomInDown">
                   <div className="goal__content">
                     <h3 className="home__subtitle">Сложные интерфейсы</h3>
                     <p className="home__text">
@@ -311,7 +315,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="development__card">
+                <div className="development__card wow animate__animated animate__zoomInRight">
                   <div className="goal__content">
                     <h3 className="home__subtitle">Создание WOW-эффекта</h3>
                     <p className="home__text">
@@ -326,7 +330,7 @@ export default function Home() {
         </section>
         <section className="myFitsandCurs">
           <div className="myFitsandCurs__grid">
-            <div className="myFits__container">
+            <div className="myFits__container wow animate__animated animate__slideInLeft">
               <h1 className="home__title">Мой подход к работе</h1>
               <p className="home__text myFits__text">
                 Верю, что выдающийся фронтенд — это там, где безупречный код
@@ -345,7 +349,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="curs__container">
+            <div className="curs__container wow animate__animated animate__slideInRight">
               <h1 className="home__title">Курсы и непрерывное развитие</h1>
               <p className="home__text myFits__text">
                 Frontend-разработчик | [Nordic IT Shool]
@@ -367,7 +371,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="contacts">
+        <section className="contacts wow animate__animated animate__fadeInBottomLeft">
           <h1 className="home__title">Связаться со мной</h1>
           <div className="contacts__grid">
             <a
