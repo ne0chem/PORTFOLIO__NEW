@@ -2,6 +2,7 @@ import React from "react";
 import "./Home.css";
 import ThreadsBackground from "../../animation/ThreadsBackground/ThreadsBackground";
 import useWow from "../../animation/useWOW/useWow";
+import PortfolioCarousel from "../../PortfolioCarousel/PortfolioCarousel";
 
 export default function Home() {
   useWow();
@@ -44,6 +45,10 @@ export default function Home() {
               <img className="home__image" src="./img.jpg" alt="" />
             </div>
           </div>
+        </section>
+        <section className="swipper">
+          <h1 className="home__title skills__title ">Мои работы</h1>
+          <PortfolioCarousel />
         </section>
         <section className="skills ">
           <h1 className="home__title skills__title wow animate__animated animate__backInDown">

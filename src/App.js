@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import Portfolio from "./pages/portfolio/Portfolio";
 import Intro from "./pages/intro/Intro";
 import ShollPortfolio from "./pages/shollPortfolio/ShollPortfolio";
+import ProjectDetails from "./pages/portfolio/ProjectDetails/ProjectDetails"; // добавьте этот импорт
 
 function App() {
   return (
@@ -14,8 +15,12 @@ function App() {
           <Route path="/" element={<MainLayout />}>
             <Route path="home" element={<Home />} />
             <Route path="portfolio" element={<Portfolio />} />
-            <Route path="shool" element={<ShollPortfolio />} />{" "}
-            {/* Исправлено - без слеша */}
+            <Route
+              path="portfolio/project/:projectId"
+              element={<ProjectDetails />}
+            />{" "}
+            {/* добавили маршрут для деталей проекта */}
+            <Route path="shool" element={<ShollPortfolio />} />
           </Route>
         </Routes>
       </Router>

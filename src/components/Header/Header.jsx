@@ -86,7 +86,7 @@ export default function Header() {
                 className="contact-card"
                 onClick={handleLinkClick}
               >
-                <img className="icon" src="./gmail.svg" alt="Email" />
+                <img className="icon" src="/gmail.svg" alt="Email" />
                 <span>Email</span>
               </a>
 
@@ -95,7 +95,7 @@ export default function Header() {
                 className="contact-card"
                 onClick={handleLinkClick}
               >
-                <img className="icon" src="./telegram.svg" alt="Telegram" />
+                <img className="icon" src="/telegram.svg" alt="Telegram" />
                 <span>Telegram</span>
               </a>
 
@@ -104,7 +104,7 @@ export default function Header() {
                 className="contact-card"
                 onClick={handleLinkClick}
               >
-                <img className="icon" src="./github_dark.svg" alt="GitHub" />
+                <img className="icon" src="/github_dark.svg" alt="GitHub" />
                 <span>GitHub</span>
               </a>
             </div>

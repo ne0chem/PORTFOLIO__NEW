@@ -1,0 +1,45 @@
+body {
+  color: aliceblue;
+}
+
+.portfolio__cards-link {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* ← ДОБАВИТЬ ЭТО */
+  gap: 20px; /* ← ДОБАВИТЬ ОТСТУПЫ */
+  max-width: 1400px;
+  width: 100%; /* ← ИЗМЕНИТЬ НА 100% */
+}
+.portfolioData-link-horizontal {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  border: var(--border);
+  box-shadow: var(--text--shadow);
+  background: var(--glass-shadow);
+  width: 250px;
+  height: 150px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+.portfolioData__title {
+  font-size: 18px;
+  padding: 10px;
+  color: var(--text-light);
+  text-shadow: var(--text--shadow--white);
+}
+.portfolioData-role {
+  font-size: 14px;
+  color: var(--primary-green);
+  text-shadow: var(--text--shadow);
+}
+.portfolioData-link-horizontal.clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.portfolioData-link-horizontal.clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}

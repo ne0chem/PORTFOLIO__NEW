@@ -32,3 +32,27 @@ html {
   margin: 0 auto;
   padding: 0 20px;
 }
+:root {
+  --box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(97, 220, 163, 0.1); /*тень */
+  --box--shadow--hover: 0 40px 80px rgba(97, 220, 163, 0.2),
+    0 0 0 1px rgba(97, 220, 163, 0.2); /*тень при наведении(или дефолтная, не опеределилась еще*/
+  --border: 1px solid rgba(97, 220, 163, 0.2); /*граница*/
+  --text--shadow: 0 0 20px rgba(97, 220, 163, 0.3); /*шадов бля зеленого текста*/
+  --text--shadow--white: 0 0 10px rgba(232, 245, 232, 0.3); /*шадов для белого текста*/
+
+  --bg--container: rgba(43, 69, 57, 0.1); /*цвет фона контейнера*/
+  /*цвета из другого css*/
+  --primary-green: #61dca3; /*зеленый текст( типо выделение)*/
+  --primary-blue: #61b3dc;
+  --text-light: #e8f5e8; /*стандартный текст */
+
+  --text-muted: #b0b0b0; /*текст серого цвета*/
+  --glass-border: rgba(97, 220, 163, 0.2);
+
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.12);
+  --glass-shadow: rgba(0, 0, 0, 0.1);
+  --text-light: rgba(255, 255, 255, 0.9);
+  --text-muted: rgba(255, 255, 255, 0.7);
+}
