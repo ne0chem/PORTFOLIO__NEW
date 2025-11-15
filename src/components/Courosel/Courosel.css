@@ -1,0 +1,136 @@
+.shool-carousel-wrapper {
+  background: var(--bg--container);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: var(--border);
+  box-shadow: var(--box--shadow--hover);
+  height: auto;
+  display: flex;
+}
+.shool-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 40px;
+}
+
+.shool-right h1 {
+  font-size: 25px;
+  text-align: center;
+}
+
+.shool-carousel {
+  position: relative;
+  width: 1000px;
+  height: 550px;
+  border-radius: 30px;
+  overflow: hidden;
+  perspective: 1000px;
+  margin-top: 40px;
+}
+
+.shool-carousel .shool-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transform-style: preserve-3d;
+  animation: flipCarousel 15s infinite;
+  object-fit: cover;
+  border-radius: 30px;
+  backface-visibility: hidden;
+}
+
+/* Динамические задержки для любого количества картинок */
+.shool-carousel .shool-img:nth-child(1) {
+  animation-delay: 0s;
+}
+.shool-carousel .shool-img:nth-child(2) {
+  animation-delay: 3s;
+}
+.shool-carousel .shool-img:nth-child(3) {
+  animation-delay: 6s;
+}
+.shool-carousel .shool-img:nth-child(4) {
+  animation-delay: 9s;
+}
+.shool-carousel .shool-img:nth-child(5) {
+  animation-delay: 12s;
+}
+.shool-carousel .shool-img:nth-child(6) {
+  animation-delay: 15s;
+}
+.shool-carousel .shool-img:nth-child(7) {
+  animation-delay: 18s;
+}
+.shool-carousel .shool-img:nth-child(8) {
+  animation-delay: 21s;
+}
+.shool-carousel .shool-img:nth-child(9) {
+  animation-delay: 24s;
+}
+.shool-carousel .shool-img:nth-child(10) {
+  animation-delay: 27s;
+}
+.shool-carousel .shool-img:nth-child(11) {
+  animation-delay: 30s;
+}
+.shool-carousel .shool-img:nth-child(12) {
+  animation-delay: 33s;
+}
+
+/* Автоматическая настройка времени анимации в зависимости от количества картинок */
+.shool-carousel {
+  --image-count: 3; /* Базовое значение */
+}
+
+.shool-carousel .shool-img {
+  animation-duration: calc(var(--image-count) * 5s);
+}
+
+/* Анимация с эффектом переворачивания */
+@keyframes flipCarousel {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg) scale(1.1);
+    z-index: 1;
+  }
+  5% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+    z-index: 2;
+  }
+  25% {
+    opacity: 1;
+    transform: rotateY(0deg) scale(1);
+    z-index: 2;
+  }
+  30% {
+    opacity: 1;
+    transform: rotateY(-90deg) scale(0.9);
+    z-index: 1;
+  }
+  31% {
+    opacity: 0;
+    transform: rotateY(-90deg) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: rotateY(-90deg) scale(0.9);
+  }
+}
+
+/* Убираем дублирующие стили */
+/* .shool-img {
+  width: 900px;
+  height: 550px;
+  border-radius: 30px;
+  object-fit: cover;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  image-rendering: high-quality;
+  backface-visibility: hidden;
+} */

@@ -3,6 +3,7 @@ import "./ProjectDetails.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { portfolioData } from "../../../data/portfolio-data";
 import ThreadsBackground from "../../../animation/ThreadsBackground/ThreadsBackground";
+import Courosel from "../../../components/Courosel/Courosel";
 
 export default function ProjectDetails() {
   const { projectId } = useParams();
@@ -71,6 +72,7 @@ export default function ProjectDetails() {
             </div>
           </div>
         )}
+        <Courosel project={project} />
         {/* {project.testimonial && (
           <div className="otziv">
             <h1 className="process-title">Отзыв заказчика</h1>

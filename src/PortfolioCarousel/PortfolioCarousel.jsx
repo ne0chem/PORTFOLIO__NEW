@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 import { portfolioData } from "../data/portfolio-data";
+import Courosel from "../components/Courosel/Courosel";
 import "swiper/css";
 import "./PortfolioCarousel.css";
 

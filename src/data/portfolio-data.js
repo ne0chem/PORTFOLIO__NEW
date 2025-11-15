@@ -100,6 +100,17 @@ export const portfolioData = [
 
     //картинки
     images: ["./cd.png", "./cd2.png", "./cd1.png"],
+    IMGCRS: [
+      "/cd01.png",
+      "/cd02.png",
+      "/cd03.png",
+      "/cd04.png",
+      "/cd05.png",
+      "/cd06.png",
+      "/cd07.png",
+      "/cd08.png",
+      "/cd09.png",
+    ],
     featured: true, // Показывать в карусели на главной
   },
   {
@@ -313,6 +324,7 @@ export const portfolioData = [
 
     //картинки
     images: ["./po1.png", "./po2.png", "./po3.png"],
+    IMGCRS: ["/pk01.png", "/pk02.png", "/pk03.png", "/pk04.png"],
     featured: true, // Показывать в карусели на главной
   },
   {
@@ -404,6 +416,7 @@ export const portfolioData = [
 
     //картинки
     images: ["./ml1.png", "./mp.png", "./mp2.png"],
+    IMGCRS: ["/ml1.png", "/mp.png", "/mp2.png"],
     featured: true, // Показывать в карусели на главной
   },
   {
@@ -475,6 +488,7 @@ export const portfolioData = [
 
     //картинки
     images: ["./pk.png", "./pk1.png", "./pk2.png"],
+    IMGCRS: ["/pk.png", "/pk1.png", "/pk2.png", "/pl3.png"],
     featured: true, // Показывать в карусели на главной
   },
 ];
