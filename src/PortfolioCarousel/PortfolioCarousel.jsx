@@ -103,6 +103,7 @@ const PortfolioCarousel = () => {
                         />
                       </a>
                     </div>
+
                     <div className="gitHub">
                       <a
                         href={portfolioData.github}
@@ -117,6 +118,7 @@ const PortfolioCarousel = () => {
                       </a>
                     </div>
                   </div>
+                  <p className="portfolio__link-title">{portfolioData.info}</p>
                 </div>
                 <div className="portfolio-right">
                   <div className="portfolio-content">

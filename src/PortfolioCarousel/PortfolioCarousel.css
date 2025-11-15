@@ -14,7 +14,10 @@
   display: flex;
   padding: 30px;
 }
-
+.portfolio__link-title {
+  color: var(--text-muted);
+  font-style: italic;
+}
 /*левая часть карусели с картинкой и ссылкой на гит/сайт*/
 .portfolio-left {
   display: flex;

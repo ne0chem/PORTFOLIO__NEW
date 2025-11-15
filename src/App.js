@@ -5,7 +5,7 @@ import Portfolio from "./pages/portfolio/Portfolio";
 import Intro from "./pages/intro/Intro";
 import ShollPortfolio from "./pages/shollPortfolio/ShollPortfolio";
 import ProjectDetails from "./pages/portfolio/ProjectDetails/ProjectDetails"; // добавьте этот импорт
-
+import ShollDetails from "./pages/shollPortfolio/shollDetails/ShollDetails";
 function App() {
   return (
     <div className="App">
@@ -21,6 +21,8 @@ function App() {
             />{" "}
             {/* добавили маршрут для деталей проекта */}
             <Route path="shool" element={<ShollPortfolio />} />
+            {/* ДОБАВЬТЕ ЭТОТ МАРШРУТ */}
+            <Route path="shool/project/:projectId" element={<ShollDetails />} />
           </Route>
         </Routes>
       </Router>

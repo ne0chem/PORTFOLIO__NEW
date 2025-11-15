@@ -2,7 +2,7 @@ import React from "react";
 import "./ProjectDetails.css";
 import { useParams, useNavigate } from "react-router-dom";
 import { portfolioData } from "../../../data/portfolio-data";
-import Contacnts from "../../../components//Contacnts/Contacnts";
+import ThreadsBackground from "../../../animation/ThreadsBackground/ThreadsBackground";
 
 export default function ProjectDetails() {
   const { projectId } = useParams();
@@ -26,6 +26,7 @@ export default function ProjectDetails() {
 
   return (
     <div className="project-details">
+      <ThreadsBackground />
       <button className="back-button" onClick={() => navigate("/portfolio")}>
         ← Назад к работам
       </button>
@@ -70,7 +71,7 @@ export default function ProjectDetails() {
             </div>
           </div>
         )}
-        {project.testimonial && (
+        {/* {project.testimonial && (
           <div className="otziv">
             <h1 className="process-title">Отзыв заказчика</h1>
             <div className="otziv-blocks">
@@ -82,7 +83,7 @@ export default function ProjectDetails() {
               ))}
             </div>
           </div>
-        )}
+        )} */}
       </div>
     </div>
   );
