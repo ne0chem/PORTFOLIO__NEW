@@ -6,6 +6,7 @@ import Intro from "./pages/intro/Intro";
 import ShollPortfolio from "./pages/shollPortfolio/ShollPortfolio";
 import ProjectDetails from "./pages/portfolio/ProjectDetails/ProjectDetails"; // добавьте этот импорт
 import ShollDetails from "./pages/shollPortfolio/shollDetails/ShollDetails";
+import Ribbons from "./animation/Ribbons/Ribbons";
 function App() {
   return (
     <div className="App">

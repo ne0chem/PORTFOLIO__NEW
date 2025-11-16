@@ -4,8 +4,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import { portfolioData } from "../../../data/portfolio-data";
 import ThreadsBackground from "../../../animation/ThreadsBackground/ThreadsBackground";
 import Courosel from "../../../components/Courosel/Courosel";
+import useWow from "../../../animation/useWOW/useWow";
 
 export default function ShollDetails() {
+  useWow();
   const { projectId } = useParams();
   const navigate = useNavigate();
 
@@ -33,9 +35,11 @@ export default function ShollDetails() {
       </button>
 
       <div className="shool-content">
-        <h1 className="title">{project.title}</h1>
+        <h1 className="title wow animate__animated animate__fadeInLeft">
+          {project.title}
+        </h1>
 
-        <div className="shool-info">
+        <div className="shool-info wow animate__animated animate__fadeInRight">
           <div className="info__left">
             <div className="shool-item">
               <p>Роль:</p>
@@ -77,7 +81,7 @@ export default function ShollDetails() {
         </div>
 
         {project.processBlocks && (
-          <div className="process-shool">
+          <div className="process-shool wow animate__animated animate__fadeInUp">
             <h2 className="process-shool">Процесс работы над проектом</h2>
             <div className="process-shool">
               {project.processBlocks.map((block, index) => (
@@ -90,7 +94,7 @@ export default function ShollDetails() {
           </div>
         )}
 
-        <div className="shool__main">
+        <div className="shool__main wow animate__animated animate__fadeInLeft">
           <h3 className="shool__title">
             Приобритенные и закрепелнные навыки навыки
           </h3>
@@ -110,7 +114,7 @@ export default function ShollDetails() {
         {/* Передаем данные текущего проекта в карусель */}
         <Courosel project={project} />
 
-        <div className="shool__conclusion">
+        <div className="shool__conclusion wow animate__animated animate__fadeInLeft">
           <h3 className="conclusion__title">Итоги проекта</h3>
           <p className="conclusion__text">{project.conclusion}</p>
         </div>

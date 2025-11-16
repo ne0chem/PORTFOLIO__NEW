@@ -4,8 +4,10 @@ import { useParams, useNavigate } from "react-router-dom";
 import { portfolioData } from "../../../data/portfolio-data";
 import ThreadsBackground from "../../../animation/ThreadsBackground/ThreadsBackground";
 import Courosel from "../../../components/Courosel/Courosel";
+import useWow from "../../../animation/useWOW/useWow";
 
 export default function ProjectDetails() {
+  useWow();
   const { projectId } = useParams();
   const navigate = useNavigate();
 
@@ -33,9 +35,11 @@ export default function ProjectDetails() {
       </button>
 
       <div className="project-content">
-        <h1 className="project-title">{project.title}</h1>
+        <h1 className="project-title wow animate__animated animate__fadeInLeft">
+          {project.title}
+        </h1>
 
-        <div className="project-info">
+        <div className="project-info wow animate__animated animate__fadeInRight">
           <div className="info-item">
             <p>Роль:</p>
             <p className="info-item__dop">{project.role}</p>
@@ -60,7 +64,7 @@ export default function ProjectDetails() {
         </div>
 
         {project.processBlocks && (
-          <div className="process-section">
+          <div className="process-section wow animate__animated animate__fadeInUp">
             <h2 className="process-title">Процесс работы над проектом</h2>
             <div className="process-blocks">
               {project.processBlocks.map((block, index) => (

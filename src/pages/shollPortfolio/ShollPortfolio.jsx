@@ -18,7 +18,7 @@ export default function ShollPortfolio() {
         <ThreadsBackground />
         <div className="portfolio__header">
           <div
-            className="portfolio__cards"
+            className="portfolio__cards wow animate__animated animate__jackInTheBox"
             data-wow-duration="1s"
             data-wow-delay="1s"
           >
