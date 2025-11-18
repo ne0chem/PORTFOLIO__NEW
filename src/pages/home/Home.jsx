@@ -117,6 +117,16 @@ export default function Home() {
                   </div>
                   <span className="skills__progress-percent">85-90%</span>
                 </div>
+                <div className="skills__progress-item">
+                  <span className="skills__progress-name">Bootstrap 5</span>
+                  <div className="skills__progress-bar">
+                    <div
+                      className="skills__progress-fill"
+                      style={{ width: "65%" }}
+                    ></div>
+                  </div>
+                  <span className="skills__progress-percent">65%</span>
+                </div>
 
                 <div className="skills__progress-item">
                   <span className="skills__progress-name">JavaScript</span>
@@ -229,8 +239,8 @@ export default function Home() {
                 </div>
                 <div class="card-back">
                   <p>
-                    React Router Dom, Redux, Axios, Fetch API, Formik / React
-                    Hook Form, Yup
+                    Bootstrap 5, React Router Dom, Redux, Axios, Fetch API,
+                    Formik / React Hook Form, Yup
                   </p>
                 </div>
               </div>
