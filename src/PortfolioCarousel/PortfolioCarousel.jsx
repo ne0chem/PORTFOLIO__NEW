@@ -1,19 +1,31 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useNavigate } from "react-router-dom";
 import { portfolioData } from "../data/portfolio-data";
-import Courosel from "../components/Courosel/Courosel";
 import "swiper/css";
 import "swiper/css/autoplay";
 import "./PortfolioCarousel.css";
 
 const PortfolioCarousel = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(false);
   const navigate = useNavigate();
   const swiperRef = useRef(null);
   const [isBeginning, setIsBeginning] = useState(true);
   const [isEnd, setIsEnd] = useState(false);
+
+  // Определяем мобильное устройство
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   const handleServiceClick = (service) => {
     navigate("/service", {
@@ -62,11 +74,16 @@ const PortfolioCarousel = () => {
           centeredSlides={true}
           loop={true}
           grabCursor={true}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true, // Пауза при наведении курсора
-          }}
+          // Условный автоплей: на десктопе работает, на мобиле отключен
+          autoplay={
+            !isMobile
+              ? {
+                  delay: 5000,
+                  disableOnInteraction: false,
+                  pauseOnMouseEnter: true,
+                }
+              : false
+          }
           speed={800}
           onSwiper={onSwiper}
           onSlideChange={onSlideChange}
@@ -152,7 +169,7 @@ const PortfolioCarousel = () => {
                                   <li key={index} className="portfolio__li">
                                     {responsibility}
                                   </li>
-                                )
+                                ),
                               )
                             : null}
                         </ul>
