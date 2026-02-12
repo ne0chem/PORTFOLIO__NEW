@@ -365,7 +365,7 @@ export default function Home() {
             </div>
 
             <div className="curs__container wow animate__animated animate__slideInRight">
-              <h1 className="home__title">Курсы и непрерывное развитие</h1>
+              <h1 className="home__title">Курсы и развитие</h1>
               <p className="home__text myFits__text">
                 Frontend-разработчик | [Nordic IT Shool]
                 <span className="highlight">

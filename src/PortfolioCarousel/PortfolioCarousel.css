@@ -1,45 +1,60 @@
+/* PortfolioCarousel.css */
+
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
+.services-carousel-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
 .services-carousel-wrapper {
   background: var(--bg--container);
   backdrop-filter: blur(20px);
   border-radius: 20px;
   border: var(--border);
   box-shadow: var(--box--shadow--hover);
-  height: auto;
+  width: 100%;
   display: flex;
+  overflow: hidden;
 }
-/*стиль для карточки карусели*/
+
+/* ===== СТИЛИ КАРТОЧКИ ===== */
 .portfolio-card {
-  max-width: 1400px;
-  width: 1300px;
   display: flex;
-  padding: 30px;
+  gap: 40px;
+  padding: 40px;
+  width: 100%;
+  max-width: 1300px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
-.portfolio__link-title {
-  color: var(--text-muted);
-  font-style: italic;
-}
-/*левая часть карусели с картинкой и ссылкой на гит/сайт*/
+
+/* ===== ЛЕВАЯ ЧАСТЬ ===== */
 .portfolio-left {
   display: flex;
-  width: 550px;
-  height: 600px;
+  width: 45%;
+  max-width: 550px;
+  min-width: 400px;
+  height: auto;
+  min-height: 600px;
   justify-content: space-between;
   align-content: center;
   align-items: center;
   flex-direction: column;
 }
-.portfolio__links {
-  display: flex;
-  gap: 80px;
-}
-/*карусель для картинок сайтов*/
+
+/* Карусель изображений */
 .css-carousel {
   position: relative;
-  width: 400px;
+  width: 100%;
+  max-width: 400px;
   height: 550px;
   border-radius: 30px;
   overflow: hidden;
   perspective: 1000px;
+  margin-bottom: 20px;
 }
 
 .css-carousel .portfolio-img {
@@ -53,7 +68,6 @@
   animation: flipCarousel 15s infinite;
 }
 
-/* Задержки для 3 картинок */
 .css-carousel .portfolio-img:nth-child(1) {
   animation-delay: 0s;
 }
@@ -64,7 +78,6 @@
   animation-delay: 10s;
 }
 
-/* Анимация с эффектом переворачивания */
 @keyframes flipCarousel {
   0% {
     opacity: 0;
@@ -97,8 +110,8 @@
 }
 
 .portfolio-img {
-  width: 400px;
-  height: 550px;
+  width: 100%;
+  height: 100%;
   border-radius: 30px;
   object-fit: cover;
   image-rendering: -webkit-optimize-contrast;
@@ -106,54 +119,100 @@
   image-rendering: high-quality;
   backface-visibility: hidden;
 }
-.portfolio__link-img {
-  width: 50px;
-  height: 50px;
-  filter: brightness(0) invert(1);
-}
+
 .portfolio__category {
   color: var(--text-light);
   text-shadow: var(--text--shadow--white);
   font-size: 20px;
+  margin: 15px 0 10px;
+  text-align: center;
 }
-/*правая часть карусели*/
 
+.portfolio__links {
+  display: flex;
+  gap: 80px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.portfolio__link-img {
+  width: 50px;
+  height: 50px;
+  filter: brightness(0) invert(1);
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.portfolio__link-img:hover {
+  transform: scale(1.1);
+  filter: brightness(0) invert(0.8) sepia(1) hue-rotate(90deg) saturate(5);
+}
+
+.portfolio__link-title {
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: 16px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* ===== ПРАВАЯ ЧАСТЬ ===== */
 .portfolio-right {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
-  height: 650px;
+  width: 55%;
+  height: auto;
+  min-height: 650px;
+  padding-left: 20px;
+  box-sizing: border-box;
 }
+
+.portfolio-header {
+  margin-bottom: 25px;
+}
+
 .portfolio-title {
   color: var(--text-light);
   text-shadow: var(--text--shadow--white);
-  font-size: 30px;
-  line-height: 1;
-  margin-top: -10px;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  word-break: break-word;
 }
+
 .portfolio__role-time {
   display: flex;
-  text-align: center;
-  justify-content: space-between;
+  gap: 40px;
+  align-items: center;
 }
-.portfolio__role__dop {
-  color: var(--primary-green);
-  margin-left: 8px;
-}
-/*стили для списка*/
+
 .portfolio__role {
   color: var(--text-light);
   text-shadow: var(--text--shadow--white);
-  font-size: 20px;
-  line-height: 1;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.portfolio__role__dop {
+  color: var(--primary-green);
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+/* ===== СПИСОК ОБЯЗАННОСТЕЙ ===== */
+.portfolio__main {
+  flex: 1;
 }
 
 .portfolio__list {
   color: var(--text-light);
   text-shadow: var(--text--shadow--white);
-  font-size: 18px;
-  line-height: 1.4;
-  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  padding-left: 0;
 }
 
 .portfolio__li {
@@ -191,27 +250,18 @@
   box-shadow: 0 0 15px var(--primary-green);
 }
 
+/* ===== ТЕХНОЛОГИИ ===== */
 .tech-list--three-columns {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 12px;
   list-style: none;
   padding: 0;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-
-.tech-list--three-columns {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+  margin: 20px 0;
 }
 
 .tech-item {
-  padding: 8px;
+  padding: 10px 8px;
   font-size: 13px;
   background: var(--glass-bg);
   border-radius: 10px;
@@ -220,11 +270,14 @@
   overflow: hidden;
   transition: all 0.3s ease;
   text-align: center;
-  break-inside: avoid;
   color: var(--text-light);
   text-shadow: var(--text--shadow--white);
   box-shadow: var(--box-shadow);
-  max-height: 28px;
+  word-break: break-word;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 36px;
 }
 
 .tech-item::before {
@@ -238,7 +291,7 @@
     90deg,
     transparent,
     rgba(97, 220, 163, 0.2),
-    /* прямое значение вместо rgba(var(--primary-green-rgb), 0.2) */ transparent
+    transparent
   );
   transition: left 0.5s ease;
 }
@@ -254,12 +307,13 @@
   text-shadow: var(--text--shadow);
 }
 
-/*стили для кнопки и ее положение*/
+/* ===== КНОПКА ===== */
 .portfolio-footer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   margin-top: 30px;
 }
+
 .portfolio__button__1 {
   width: 200px;
   height: 50px;
@@ -268,7 +322,544 @@
   border-radius: 30px;
   color: var(--primary-green);
   font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 .portfolio__button__1:hover {
   box-shadow: var(--box--shadow--hover);
+  transform: translateY(-2px);
+  background: rgba(97, 220, 163, 0.1);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* Десктопы (1200px - 1400px) */
+@media (max-width: 1400px) {
+  .portfolio-card {
+    max-width: 1200px;
+    padding: 35px;
+    gap: 30px;
+  }
+
+  .portfolio-left {
+    min-width: 380px;
+  }
+
+  .css-carousel {
+    max-width: 380px;
+    height: 520px;
+  }
+}
+
+/* Десктопы средние (1025px - 1200px) */
+@media (max-width: 1200px) {
+  .portfolio-card {
+    padding: 30px;
+    gap: 25px;
+  }
+
+  .portfolio-left {
+    min-width: 350px;
+    min-height: 550px;
+  }
+
+  .css-carousel {
+    max-width: 350px;
+    height: 480px;
+  }
+
+  .portfolio-right {
+    min-height: 600px;
+  }
+
+  .portfolio-title {
+    font-size: 28px;
+  }
+
+  .portfolio__role {
+    font-size: 16px;
+  }
+
+  .tech-list--three-columns {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Планшеты (769px - 1024px) */
+@media (max-width: 1024px) {
+  .services-carousel-container {
+    padding: 0 15px;
+  }
+
+  .portfolio-card {
+    flex-direction: column;
+    padding: 30px;
+    gap: 30px;
+  }
+
+  .portfolio-left {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+    min-height: auto;
+  }
+
+  .css-carousel {
+    max-width: 400px;
+    height: 500px;
+    margin: 0 auto;
+  }
+
+  .portfolio-right {
+    width: 100%;
+    min-height: auto;
+    padding-left: 0;
+  }
+
+  .portfolio-title {
+    font-size: 26px;
+    text-align: center;
+  }
+
+  .portfolio__role-time {
+    justify-content: center;
+    gap: 30px;
+  }
+
+  .portfolio-footer {
+    justify-content: center;
+  }
+
+  .tech-list--three-columns {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+}
+
+/* Планшеты маленькие (601px - 768px) */
+@media (max-width: 768px) {
+  .services-carousel-wrapper {
+    border-radius: 15px;
+  }
+
+  .portfolio-card {
+    padding: 25px;
+  }
+
+  .css-carousel {
+    max-width: 350px;
+    height: 450px;
+  }
+
+  .portfolio__category {
+    font-size: 18px;
+  }
+
+  .portfolio__links {
+    gap: 50px;
+  }
+
+  .portfolio__link-img {
+    width: 45px;
+    height: 45px;
+  }
+
+  .portfolio-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .portfolio__role {
+    font-size: 15px;
+  }
+
+  .portfolio__role-time {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .portfolio__li {
+    font-size: 15px;
+  }
+
+  .tech-list--three-columns {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .tech-item {
+    font-size: 12px;
+    padding: 8px 6px;
+    min-height: 32px;
+  }
+
+  .portfolio__button__1 {
+    width: 180px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+/* Мобильные устройства (481px - 600px) */
+@media (max-width: 600px) {
+  .services-carousel-container {
+    padding: 0 10px;
+  }
+
+  .portfolio-card {
+    padding: 20px;
+  }
+
+  .css-carousel {
+    max-width: 300px;
+    height: 400px;
+    border-radius: 20px;
+  }
+
+  .portfolio-img {
+    border-radius: 20px;
+  }
+
+  .portfolio__category {
+    font-size: 16px;
+    margin: 10px 0 5px;
+  }
+
+  .portfolio__links {
+    gap: 40px;
+  }
+
+  .portfolio__link-img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .portfolio__link-title {
+    font-size: 14px;
+  }
+
+  .portfolio-title {
+    font-size: 22px;
+  }
+
+  .portfolio__role {
+    font-size: 14px;
+  }
+
+  .portfolio__list {
+    margin-bottom: 20px;
+  }
+
+  .portfolio__li {
+    font-size: 14px;
+    margin-top: 10px;
+    padding-left: 20px;
+  }
+
+  .tech-list--three-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+  }
+
+  .tech-item {
+    font-size: 11px;
+    padding: 6px 4px;
+    min-height: 30px;
+  }
+
+  .portfolio-footer {
+    margin-top: 20px;
+  }
+
+  .portfolio__button__1 {
+    width: 160px;
+    height: 40px;
+    font-size: 15px;
+    border-radius: 25px;
+  }
+}
+
+/* Маленькие мобильные (320px - 480px) */
+@media (max-width: 480px) {
+  .services-carousel-wrapper {
+    border-radius: 12px;
+  }
+
+  .portfolio-card {
+    padding: 15px;
+  }
+
+  .css-carousel {
+    max-width: 260px;
+    height: 350px;
+    border-radius: 15px;
+  }
+
+  .portfolio-img {
+    border-radius: 15px;
+  }
+
+  .portfolio__category {
+    font-size: 15px;
+  }
+
+  .portfolio__links {
+    gap: 30px;
+  }
+
+  .portfolio__link-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .portfolio__link-title {
+    font-size: 13px;
+  }
+
+  .portfolio-title {
+    font-size: 20px;
+  }
+
+  .portfolio__role {
+    font-size: 13px;
+  }
+
+  .portfolio__role__dop {
+    margin-left: 5px;
+  }
+
+  .portfolio__li {
+    font-size: 13px;
+    margin-top: 8px;
+    padding-left: 18px;
+  }
+
+  .portfolio__li::before {
+    width: 6px;
+    height: 6px;
+  }
+
+  .tech-list--three-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+  }
+
+  .tech-item {
+    font-size: 10px;
+    padding: 5px 3px;
+    min-height: 28px;
+    border-radius: 8px;
+  }
+
+  .portfolio__button__1 {
+    width: 140px;
+    height: 38px;
+    font-size: 14px;
+  }
+}
+
+/* Очень маленькие устройства (до 320px) */
+@media (max-width: 320px) {
+  .portfolio-card {
+    padding: 12px;
+  }
+
+  .css-carousel {
+    max-width: 220px;
+    height: 300px;
+  }
+
+  .portfolio__links {
+    gap: 25px;
+  }
+
+  .portfolio__link-img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .portfolio-title {
+    font-size: 18px;
+  }
+
+  .portfolio__role {
+    font-size: 12px;
+  }
+
+  .tech-list--three-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .tech-item {
+    font-size: 11px;
+    padding: 6px;
+    min-height: 32px;
+  }
+
+  .portfolio__button__1 {
+    width: 130px;
+    height: 36px;
+    font-size: 13px;
+  }
+}
+
+/* ===== ДОПОЛНИТЕЛЬНЫЕ НАСТРОЙКИ ===== */
+
+/* Настройки для планшетов в альбомной ориентации */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .portfolio-card {
+    flex-direction: row;
+  }
+
+  .portfolio-left {
+    width: 45%;
+  }
+
+  .portfolio-right {
+    width: 55%;
+  }
+
+  .css-carousel {
+    max-width: 320px;
+    height: 420px;
+  }
+}
+
+/* Настройки для устройств с высоким разрешением */
+@media (min-width: 1920px) {
+  .portfolio-card {
+    max-width: 1500px;
+    padding: 50px;
+    gap: 50px;
+  }
+
+  .portfolio-left {
+    min-width: 450px;
+  }
+
+  .css-carousel {
+    max-width: 450px;
+    height: 600px;
+  }
+
+  .portfolio-title {
+    font-size: 36px;
+  }
+
+  .portfolio__role {
+    font-size: 20px;
+  }
+
+  .portfolio__li {
+    font-size: 18px;
+  }
+
+  .tech-item {
+    font-size: 14px;
+    padding: 12px 10px;
+    min-height: 40px;
+  }
+
+  .portfolio__button__1 {
+    width: 220px;
+    height: 55px;
+    font-size: 20px;
+  }
+}
+
+/* Настройки для устройств без Hover (тач-устройства) */
+@media (hover: none) {
+  .portfolio__link-img:hover,
+  .tech-item:hover,
+  .portfolio__button__1:hover,
+  .portfolio__li:hover {
+    transform: none;
+  }
+
+  .portfolio__li:hover::before {
+    transform: translateY(-50%);
+    box-shadow: none;
+  }
+
+  .portfolio__link-img:active,
+  .tech-item:active,
+  .portfolio__button__1:active {
+    transform: scale(0.98);
+  }
+}
+
+/* Настройки для уменьшенной анимации */
+@media (prefers-reduced-motion: reduce) {
+  .css-carousel .portfolio-img,
+  .portfolio__link-img,
+  .tech-item,
+  .portfolio__li,
+  .portfolio__button__1 {
+    animation: none;
+    transition: none;
+  }
+
+  .css-carousel .portfolio-img {
+    opacity: 1;
+    animation: none;
+    position: static;
+  }
+
+  .css-carousel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: auto;
+  }
+
+  .css-carousel .portfolio-img {
+    position: relative;
+    margin-bottom: 10px;
+  }
+}
+
+/* Темная тема */
+@media (prefers-color-scheme: dark) {
+  .tech-item {
+    background: rgba(43, 69, 57, 0.3);
+  }
+}
+
+/* Исправление для Swiper */
+.swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-slide {
+  height: auto;
+  display: flex;
+}
+
+/* Анимация загрузки изображений */
+.portfolio-img {
+  background: linear-gradient(110deg, #2a2a2a 8%, #3a3a3a 18%, #2a2a2a 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Когда изображение загружено */
+.portfolio-img.loaded {
+  animation: none;
+  background: none;
 }

@@ -20,7 +20,7 @@ const Courosel = ({ project }) => {
                     src={image}
                     alt={`Проект ${index + 1}`}
                   />
-                )
+                ),
               )}
             </div>
           </div>

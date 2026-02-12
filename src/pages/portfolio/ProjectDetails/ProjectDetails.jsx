@@ -11,12 +11,10 @@ export default function ProjectDetails() {
   const { projectId } = useParams();
   const navigate = useNavigate();
 
-  // Находим проект по ID
   const project = portfolioData.find((item) => item.id === projectId);
 
   console.log("Found project:", project);
 
-  // Если проект не найден
   if (!project) {
     return (
       <div className="project-details">

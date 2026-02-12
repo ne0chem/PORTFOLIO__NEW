@@ -1,26 +1,43 @@
+/* Home.css */
+
+/* Базовые стили и CSS переменные */
+:root {
+  --primary-green: #61dca3;
+  --primary-blue: #4a90e2;
+  --text-light: #ffffff;
+  --bg-dark: rgba(0, 0, 0, 0.8);
+  --bg--container: rgba(43, 69, 57, 0.1);
+  --border: 1px solid rgba(97, 220, 163, 0.3);
+  --box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  --box--shadow--hover: 0 10px 40px rgba(97, 220, 163, 0.3);
+  --text--shadow: 0 0 12px rgba(97, 220, 163, 0.5);
+  --text--shadow--white: 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
 body {
   background-color: black;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===== HEADER SECTION ===== */
 .home__header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
   margin-top: 50px;
-}
-.home__image {
-  width: 400px;
-  height: 600px;
-  border-radius: 10px;
-  object-fit: cover;
-  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
-  box-shadow: var(--box-shadow);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  gap: 40px;
 }
 
-.home__image:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
-  box-shadow: var(--box--shadow--hover);
-}
 .home__header-left {
   max-width: 600px;
   padding: 40px;
@@ -29,8 +46,31 @@ body {
   border-radius: 20px;
   border: var(--border);
   box-shadow: var(--box--shadow--hover);
+  flex: 1;
 }
 
+.home__img {
+  flex: 0 0 auto;
+}
+
+.home__image {
+  width: 400px;
+  height: 600px;
+  border-radius: 10px;
+  object-fit: cover;
+  transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  box-shadow: var(--box-shadow);
+  transition:
+    transform 0.5s ease,
+    box-shadow 0.5s ease;
+}
+
+.home__image:hover {
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
+  box-shadow: var(--box--shadow--hover);
+}
+
+/* ===== TYPOGRAPHY ===== */
 .home__title {
   font-size: 3rem;
   font-weight: 300;
@@ -67,6 +107,7 @@ body {
   list-style: none;
   text-shadow: 0 0 12px var(--text--shadow);
   font-weight: 500;
+  padding-left: 0;
 }
 
 .home__descr__text {
@@ -87,20 +128,20 @@ body {
   text-shadow: var(--text--shadow);
 }
 
-.home__descr__text:last-child {
-  margin-bottom: 0;
-}
-
+/* ===== SKILLS SECTION ===== */
 .skills {
   margin-top: 180px;
 }
+
 .skills__title {
-  margin-bottom: 180px;
+  margin-bottom: 80px;
   text-align: center;
 }
+
 .skills__container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 40px;
   padding: 40px;
   background: var(--bg--container);
   backdrop-filter: blur(20px);
@@ -108,19 +149,21 @@ body {
   border: var(--border);
   box-shadow: var(--box--shadow--hover);
 }
+
 .skills__left {
-  width: 500px;
+  flex: 1;
+  max-width: 500px;
 }
+
 .skills__right {
-  width: 600px;
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
 }
-.skills__progress {
-  position: relative;
-  top: 30%;
-}
-/*полоски*/
+
+/* Progress bars */
 .skills__progress-item {
   display: flex;
   align-items: center;
@@ -154,84 +197,24 @@ body {
 .skills__progress-percent {
   color: var(--primary-green);
   font-weight: 500;
-  min-width: 40px;
+  min-width: 60px;
   text-align: right;
   font-size: 0.9rem;
   text-shadow: var(--text--shadow);
 }
 
-/*секция цели*/
-
-/* Development Section */
-.development {
-  padding: 80px 0;
+.skills__note {
+  font-size: 0.8rem;
+  color: rgba(97, 220, 163, 0.7);
+  font-style: italic;
 }
 
-.development__section {
-  margin-bottom: 60px;
-}
-
-.development__section:last-child {
-  margin-bottom: 0;
-}
-
-.development__grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
-}
-
-.development__card {
-  padding: 30px;
-  border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.development__card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--box--shadow--hover);
-}
-
-.development__icon {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  height: 50px;
-  width: 50px;
-}
-
-/* Goals Section */
-.goals__list {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  margin-top: 40px;
-}
-
-.goal__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  padding: 25px;
-  background: var(--bg-primary);
-  border-radius: 12px;
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
-}
-
-.goal__check {
-  font-size: 1.5rem;
-  flex-shrink: 0;
-}
-
-.goal__content {
-  flex: 1;
-}
-
-/*карточки*/
+/* ===== STACK CARDS ===== */
 .stek {
   margin-top: 180px;
   margin-bottom: 10px;
 }
+
 .stek__container {
   display: flex;
   flex-wrap: wrap;
@@ -260,15 +243,10 @@ body {
   box-shadow: var(--box-shadow);
   border: var(--border);
   border-radius: 15px;
-  transform-origin: center;
-  transition-delay: 0.1s;
 }
-.card:hover {
-  box-shadow: var(--box--shadow--hover);
-}
+
 .card:hover .card-inner {
   transform: rotateY(180deg);
-  transition-delay: 0s;
 }
 
 .card-front,
@@ -285,6 +263,8 @@ body {
   align-items: center;
   padding: 20px;
   box-sizing: border-box;
+  background: var(--bg--container);
+  backdrop-filter: blur(10px);
 }
 
 .card-back {
@@ -298,26 +278,54 @@ body {
 .card-back p {
   line-height: 1.5;
   font-size: 0.9rem;
+  margin: 0;
 }
 
-/*мой подход к работе*/
+/* ===== DEVELOPMENT & GOALS ===== */
+.development {
+  padding: 80px 0;
+}
 
-.myFits__text {
-  width: 600px;
+.development__section {
+  margin-bottom: 60px;
+}
+
+.development__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.development__card {
   padding: 30px;
+  background: var(--bg--container);
+  backdrop-filter: blur(10px);
+  border: var(--border);
   border-radius: 16px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  height: 200px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
-.myFits__text:hover {
-  box-shadow: var(--box--shadow--hover);
+
+.development__card:hover {
   transform: translateY(-5px);
+  box-shadow: var(--box--shadow--hover);
 }
+
+.development__icon {
+  margin-bottom: 20px;
+  height: 50px;
+  width: 50px;
+  object-fit: contain;
+}
+
+/* ===== APPROACH & COURSES ===== */
 .myFitsandCurs__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 40px;
-  align-items: start; /* Важно! Выравнивание по верху */
+  align-items: start;
 }
 
 .myFits__container,
@@ -327,17 +335,36 @@ body {
   gap: 20px;
 }
 
+.myFits__text {
+  padding: 30px;
+  background: var(--bg--container);
+  backdrop-filter: blur(10px);
+  border: var(--border);
+  border-radius: 16px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  height: auto;
+  min-height: 200px;
+  margin-bottom: 0;
+}
+
+.myFits__text:hover {
+  box-shadow: var(--box--shadow--hover);
+  transform: translateY(-5px);
+}
+
 .highlight {
   display: block;
   font-style: italic;
-  color: #666;
+  color: var(--primary-green);
   margin: 8px 0;
   font-size: 0.9em;
 }
 
-/*связать со мной*/
+/* ===== CONTACTS ===== */
 .contacts {
-  padding-bottom: 50px;
+  padding: 80px 0 50px;
   text-align: center;
 }
 
@@ -356,6 +383,7 @@ body {
   gap: 15px;
   padding: 30px 20px;
   background: var(--bg--container);
+  backdrop-filter: blur(10px);
   border: var(--border);
   border-radius: 16px;
   box-shadow: var(--box-shadow);
@@ -373,9 +401,9 @@ body {
 }
 
 .icon {
-  font-size: 2.5em;
   height: 50px;
   width: 50px;
+  object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(97, 220, 163, 0.3));
 }
 
@@ -383,8 +411,193 @@ body {
   font-weight: 500;
 }
 
-/* Адаптивность */
+.swipper {
+  margin-top: 180px;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+
+/* Десктопы (1025px - 1400px) */
+@media (max-width: 1400px) {
+  .content-container {
+    max-width: 1200px;
+  }
+
+  .home__header-left {
+    max-width: 500px;
+  }
+
+  .skills__container {
+    padding: 30px;
+  }
+}
+
+/* Планшеты (769px - 1024px) */
+@media (max-width: 1024px) {
+  .home__header {
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .home__header-left {
+    max-width: 100%;
+    padding: 30px;
+  }
+
+  .home__img {
+    order: -1;
+  }
+
+  .home__image {
+    width: 350px;
+    height: 500px;
+  }
+
+  .home__title {
+    font-size: 2.5rem;
+  }
+
+  .skills {
+    margin-top: 120px;
+  }
+
+  .skills__container {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .skills__left {
+    max-width: 100%;
+  }
+
+  .skills__right {
+    max-width: 100%;
+  }
+
+  .skills__title {
+    margin-bottom: 60px;
+  }
+
+  .stek {
+    margin-top: 120px;
+  }
+
+  .stek__container {
+    gap: 30px;
+    margin-top: 60px;
+  }
+
+  .myFitsandCurs__grid {
+    gap: 30px;
+  }
+
+  .swipper {
+    margin-top: 120px;
+  }
+}
+
+/* Мобильные устройства (481px - 768px) */
 @media (max-width: 768px) {
+  .content-container {
+    padding: 0 15px;
+  }
+
+  .home__header {
+    margin-top: 20px;
+    gap: 30px;
+  }
+
+  .home__header-left {
+    padding: 25px;
+  }
+
+  .home__title {
+    font-size: 2rem;
+  }
+
+  .home__subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+  }
+
+  .home__text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .home__image {
+    width: 300px;
+    height: 450px;
+  }
+
+  .skills {
+    margin-top: 100px;
+  }
+
+  .skills__container {
+    padding: 25px;
+  }
+
+  .skills__title {
+    margin-bottom: 40px;
+    font-size: 2rem;
+  }
+
+  .skills__progress-item {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .skills__progress-name {
+    min-width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .skills__progress-bar {
+    width: calc(100% - 70px);
+  }
+
+  .stek {
+    margin-top: 100px;
+  }
+
+  .stek__container {
+    gap: 25px;
+    margin-top: 40px;
+  }
+
+  .card {
+    width: 180px;
+    height: 260px;
+  }
+
+  .development {
+    padding: 60px 0;
+  }
+
+  .development__grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .development__card {
+    padding: 25px;
+  }
+
+  .myFitsandCurs__grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .myFits__text {
+    padding: 25px;
+    min-height: auto;
+  }
+
+  .contacts {
+    padding: 60px 0 40px;
+  }
+
   .contacts__grid {
     gap: 20px;
   }
@@ -393,7 +606,265 @@ body {
     min-width: 120px;
     padding: 20px 15px;
   }
+
+  .swipper {
+    margin-top: 100px;
+  }
 }
-.swipper {
-  margin-top: 180px;
+
+/* Маленькие мобильные (320px - 480px) */
+@media (max-width: 480px) {
+  .content-container {
+    padding: 0 10px;
+  }
+
+  .home__header {
+    margin-top: 15px;
+    gap: 20px;
+  }
+
+  .home__header-left {
+    padding: 20px;
+  }
+
+  .home__title {
+    font-size: 1.6rem;
+  }
+
+  .home__subtitle {
+    font-size: 1rem;
+    margin-bottom: 15px;
+  }
+
+  .home__text {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+  }
+
+  .home__descr {
+    font-size: 1rem;
+  }
+
+  .home__descr__text {
+    font-size: 0.9rem;
+  }
+
+  .home__image {
+    width: 250px;
+    height: 375px;
+  }
+
+  .skills {
+    margin-top: 80px;
+  }
+
+  .skills__container {
+    padding: 20px;
+  }
+
+  .skills__title {
+    margin-bottom: 30px;
+    font-size: 1.6rem;
+  }
+
+  .skills__item {
+    margin-bottom: 25px;
+  }
+
+  .skills__progress-percent {
+    min-width: 50px;
+    font-size: 0.8rem;
+  }
+
+  .skills__progress-bar {
+    height: 16px;
+  }
+
+  .stek {
+    margin-top: 80px;
+  }
+
+  .stek__container {
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .card {
+    width: 160px;
+    height: 240px;
+  }
+
+  .card-back p {
+    font-size: 0.8rem;
+  }
+
+  .development {
+    padding: 40px 0;
+  }
+
+  .development__section {
+    margin-bottom: 40px;
+  }
+
+  .development__grid {
+    margin-top: 30px;
+  }
+
+  .development__card {
+    padding: 20px;
+  }
+
+  .development__icon {
+    height: 40px;
+    width: 40px;
+  }
+
+  .myFits__text {
+    padding: 20px;
+  }
+
+  .contacts {
+    padding: 40px 0 30px;
+  }
+
+  .contacts__grid {
+    gap: 15px;
+  }
+
+  .contact-card {
+    min-width: 100px;
+    padding: 15px 10px;
+  }
+
+  .icon {
+    height: 40px;
+    width: 40px;
+  }
+
+  .swipper {
+    margin-top: 80px;
+  }
+}
+
+/* Очень маленькие устройства (до 320px) */
+@media (max-width: 320px) {
+  .home__image {
+    width: 220px;
+    height: 330px;
+  }
+
+  .home__title {
+    font-size: 1.4rem;
+  }
+
+  .skills__title {
+    font-size: 1.4rem;
+  }
+
+  .card {
+    width: 140px;
+    height: 210px;
+  }
+
+  .card-front h1 {
+    font-size: 1.1rem;
+  }
+
+  .contact-card {
+    min-width: calc(100% - 20px);
+  }
+
+  .contact-card span {
+    font-size: 0.9rem;
+  }
+}
+
+/* Дополнительные настройки для планшетов в альбомной ориентации */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .home__header {
+    flex-direction: row;
+  }
+
+  .home__img {
+    order: 1;
+  }
+
+  .skills__container {
+    flex-direction: row;
+  }
+
+  .skills__left {
+    max-width: 45%;
+  }
+
+  .skills__right {
+    max-width: 55%;
+  }
+}
+
+/* Настройки для устройств с высоким разрешением */
+@media (min-width: 1920px) {
+  .content-container {
+    max-width: 1600px;
+  }
+
+  .home__title {
+    font-size: 3.5rem;
+  }
+
+  .home__text {
+    font-size: 1.2rem;
+  }
+
+  .home__image {
+    width: 450px;
+    height: 650px;
+  }
+}
+
+/* Настройки для устройств с Hover эффектами */
+@media (hover: hover) {
+  .card:hover {
+    box-shadow: var(--box--shadow--hover);
+  }
+}
+
+/* Настройки для устройств без Hover (тач-устройства) */
+@media (hover: none) {
+  .card-inner {
+    transition: none;
+  }
+
+  .home__image:hover {
+    transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);
+  }
+
+  .development__card:hover,
+  .myFits__text:hover,
+  .contact-card:hover {
+    transform: none;
+  }
+}
+
+/* Настройки для темной темы */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg--container: rgba(43, 69, 57, 0.2);
+  }
+}
+
+/* Настройки для уменьшенной анимации */
+@media (prefers-reduced-motion: reduce) {
+  .home__image,
+  .card-inner,
+  .skills__progress-fill,
+  .development__card,
+  .myFits__text,
+  .contact-card {
+    transition: none;
+  }
+
+  .wow {
+    animation: none !important;
+  }
 }

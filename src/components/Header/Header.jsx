@@ -12,9 +12,7 @@ export default function Header() {
   };
 
   const closeModal = () => {
-    // Просто добавляем класс на overlay
     document.querySelector(".modal-overlay")?.classList.add("fade-out");
-
     setTimeout(() => {
       setIsModalOpen(false);
       document.body.style.overflow = "unset";
@@ -25,10 +23,6 @@ export default function Header() {
     if (e.target === e.currentTarget) {
       closeModal();
     }
-  };
-
-  const handleLinkClick = () => {
-    closeModal();
   };
 
   return (
@@ -53,7 +47,7 @@ export default function Header() {
               location.pathname === "/portfolio" ? "active" : ""
             }`}
           >
-            Портфолио(комерческие проекты)
+            Коммерческие проекты
           </Link>
           <Link
             to="/shool"
@@ -61,50 +55,64 @@ export default function Header() {
               location.pathname === "/shool" ? "active" : ""
             }`}
           >
-            Портфолио(учебные проекты)
+            Учебные проекты
           </Link>
         </nav>
 
         <button className="header__button" onClick={openModal}>
-          Связаться со мной
+          {window.innerWidth <= 480 ? "Связаться" : "Связаться со мной"}
         </button>
       </div>
 
-      {/* Модальное окно */}
       {isModalOpen && (
         <div className="modal-overlay" onClick={handleOverlayClick}>
-          <div className="modal-content contacts wow animate__animated animate__fadeInBottomLeft">
-            <button className="modal-close fade-out" onClick={closeModal}>
+          <div className="modal-content">
+            <button className="modal-close" onClick={closeModal}>
               ×
             </button>
 
-            <h1 className="home__title">Связаться со мной</h1>
-            <div className="contacts__grid">
+            <h2 className="modal-title">Связаться со мной</h2>
+
+            <div className="modal-contacts">
               <a
                 href="mailto:brenkoangelina@gmail.com?subject=Предложение для Frontend разработчика&body=Добрый день, Ангелина! 
 Мы просмотрели ваше портфолио и хотели бы обсудить..."
-                className="contact-card"
-                onClick={handleLinkClick}
+                className="modal-contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeModal}
               >
-                <img className="icon" src="/gmail.svg" alt="Email" />
+                <img className="modal-icon" src="/gmail.svg" alt="Email" />
                 <span>Email</span>
               </a>
 
               <a
                 href="https://t.me/ne_o_chem11"
-                className="contact-card"
-                onClick={handleLinkClick}
+                className="modal-contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeModal}
               >
-                <img className="icon" src="/telegram.svg" alt="Telegram" />
+                <img
+                  className="modal-icon"
+                  src="/telegram.svg"
+                  alt="Telegram"
+                />
                 <span>Telegram</span>
               </a>
 
               <a
                 href="https://github.com/ne0chem"
-                className="contact-card"
-                onClick={handleLinkClick}
+                className="modal-contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={closeModal}
               >
-                <img className="icon" src="/github_dark.svg" alt="GitHub" />
+                <img
+                  className="modal-icon"
+                  src="/github_dark.svg"
+                  alt="GitHub"
+                />
                 <span>GitHub</span>
               </a>
             </div>

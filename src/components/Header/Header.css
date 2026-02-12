@@ -1,29 +1,29 @@
-/* Стили для всего хедера */
 .header {
   width: 100%;
   background: var(--bg--container);
-  padding: 12px 0;
+  padding: 16px 0;
   backdrop-filter: blur(30px) saturate(180%);
   -webkit-backdrop-filter: blur(30px) saturate(180%);
   border-bottom: 3px solid rgba(97, 220, 163, 0.2);
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 4px 30px var(--glass-shadow),
+  box-shadow:
+    0 4px 30px var(--glass-shadow),
     inset 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-/* Контейнер внутри хедера */
 .header__container {
-  width: 1400px;
+  max-width: 1400px;
+  width: 92%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  box-sizing: border-box;
 }
 
-/* Логотип */
 .header__logo {
   font-size: 1.6rem;
   font-weight: 300;
@@ -32,6 +32,7 @@
   letter-spacing: 0.5px;
   transition: all 0.3s ease;
   position: relative;
+  white-space: nowrap;
 }
 
 .header__logo::after {
@@ -50,10 +51,9 @@
   width: 100%;
 }
 
-/* Навигация */
 .header__nav {
   display: flex;
-  gap: 25px;
+  gap: 20px;
   align-items: center;
 }
 
@@ -68,25 +68,26 @@
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
+  white-space: nowrap;
 }
 
 .header__nav-link:hover {
   background: rgba(255, 255, 255, 0.08);
   border-color: rgba(255, 255, 255, 0.1);
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
-/* Активная ссылка */
 .header__nav-link.active {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1),
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
     0 2px 10px rgba(0, 0, 0, 0.15);
 }
 
-/* Стеклянная кнопка */
 .header__button {
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -101,6 +102,7 @@
   backdrop-filter: blur(15px);
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .header__button::before {
@@ -123,102 +125,54 @@
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 255, 255, 0.18);
   transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15),
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.15),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .header__button:hover::before {
   left: 100%;
 }
-@keyframes waves {
-  0% {
-    background: radial-gradient(
-        circle at 10% 20%,
-        var(--primary-green) 0%,
-        transparent 20%
-      ),
-      radial-gradient(
-        circle at 90% 80%,
-        var(--primary-blue) 0%,
-        transparent 20%
-      ),
-      radial-gradient(
-        circle at 50% 50%,
-        var(--accent-yellow) 0%,
-        transparent 30%
-      );
-  }
-  50% {
-    background: radial-gradient(
-        circle at 90% 20%,
-        var(--primary-blue) 0%,
-        transparent 20%
-      ),
-      radial-gradient(
-        circle at 10% 80%,
-        var(--accent-yellow) 0%,
-        transparent 20%
-      ),
-      radial-gradient(
-        circle at 50% 50%,
-        var(--primary-green) 0%,
-        transparent 30%
-      );
-  }
-  100% {
-    background: radial-gradient(
-        circle at 10% 80%,
-        var(--accent-yellow) 0%,
-        transparent 20%
-      ),
-      radial-gradient(
-        circle at 90% 20%,
-        var(--primary-green) 0%,
-        transparent 20%
-      ),
-      radial-gradient(
-        circle at 50% 50%,
-        var(--primary-blue) 0%,
-        transparent 30%
-      );
-  }
-}
-/* Стили для модалки */
+
 .modal-overlay {
   position: fixed;
-  top: 0;
+  top: 0%;
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 2000;
   backdrop-filter: blur(10px);
-  /* Добавляем эти свойства для гарантии центрирования */
-  height: 100vh;
-  width: 100vw;
-  margin: 0;
-  padding: 0;
+  -webkit-backdrop-filter: blur(10px);
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.modal-content.contacts {
+.modal-content {
   background: black;
-  border: var(--border);
-  border-radius: 20px;
-  box-shadow: var(--box--shadow--hover);
+  border: 1px solid rgba(97, 220, 163, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(97, 220, 163, 0.2);
   padding: 50px 40px;
   position: relative;
   max-width: 600px;
-  width: 90%;
-  /* Убираем margin который может сдвигать */
-  margin: 0;
-  /* Добавляем для точного позиционирования */
-  position: relative;
-  top: 0;
-  left: 0;
-  transform: none;
+  width: 100%;
+  margin: auto;
+  animation: modalSlide 0.3s ease;
+}
+
+@keyframes modalSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .modal-close {
@@ -227,92 +181,152 @@
   right: 25px;
   background: none;
   border: none;
-  font-size: 2.5em;
-  color: var(--text-light);
+  font-size: 40px;
+  color: #ffffff;
   cursor: pointer;
-  transition: all 0.3s ease;
-  line-height: 1;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  transition: all 0.3s ease;
+  padding: 0;
+  line-height: 1;
 }
 
 .modal-close:hover {
-  color: var(--primary-green);
-  text-shadow: var(--text--shadow);
+  color: #61dca3;
   background: rgba(97, 220, 163, 0.1);
-  transform: scale(1.1);
-}
-/*связать со мной*/
-.contacts {
-  padding-bottom: 50px;
-  text-align: center;
+  transform: scale(1.1) rotate(90deg);
 }
 
-.contacts__grid {
+.modal-title {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+  background: linear-gradient(45deg, #ffffff, #61dca3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.modal-contacts {
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
-.contact-card {
+.modal-contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 15px;
   padding: 30px 20px;
-  background: var(--bg--container);
-  border: var(--border);
+  background: rgba(43, 69, 57, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(97, 220, 163, 0.3);
   border-radius: 16px;
-  box-shadow: var(--box-shadow);
   text-decoration: none;
-  color: var(--text-light);
+  color: #ffffff;
   transition: all 0.3s ease;
   min-width: 140px;
+  flex: 0 1 auto;
 }
 
-.contact-card:hover {
-  box-shadow: var(--box--shadow--hover);
+.modal-contact:hover {
   transform: translateY(-5px);
-  color: var(--primary-green);
-  text-shadow: var(--text--shadow);
+  border-color: #61dca3;
+  box-shadow: 0 10px 40px rgba(97, 220, 163, 0.3);
 }
 
-.icon {
-  font-size: 2.5em;
-  height: 50px;
+.modal-contact:hover span {
+  color: #61dca3;
+  text-shadow: 0 0 12px rgba(97, 220, 163, 0.5);
+}
+
+.modal-icon {
   width: 50px;
+  height: 50px;
+  object-fit: contain;
   filter: drop-shadow(0 0 10px rgba(97, 220, 163, 0.3));
-}
-.modal-overlay.fade-out {
-  animation: ultraSmoothFadeOut 0.7s ease-in-out forwards;
+  transition: all 0.3s ease;
 }
 
-@keyframes ultraSmoothFadeOut {
-  0% {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    backdrop-filter: blur(10px);
-  }
-  100% {
+.modal-contact:hover .modal-icon {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 15px rgba(97, 220, 163, 0.5));
+}
+
+.modal-contact span {
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  color: #ffffff;
+}
+
+.modal-overlay.fade-out {
+  animation: modalFadeOut 0.3s ease forwards;
+}
+
+@keyframes modalFadeOut {
+  to {
     opacity: 0;
-    transform: scale(0.9) translateY(30px);
     backdrop-filter: blur(0px);
   }
 }
-.contact-card span {
-  font-weight: 500;
-}
-/* Адаптивность */
+
 @media (max-width: 1480px) {
   .header__container {
-    width: 90%;
     max-width: 1200px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .header__container {
+    max-width: 1100px;
+  }
+  .header__nav {
+    gap: 15px;
+  }
+  .header__nav-link {
+    padding: 8px 16px;
+    font-size: 0.95rem;
+  }
+  .header__logo {
+    font-size: 1.5rem;
+  }
+  .header__button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 12px 0;
+  }
+  .header__container {
+    width: 94%;
+    padding: 0 15px;
+  }
+  .header__nav {
+    gap: 12px;
+  }
+  .header__nav-link {
+    padding: 7px 14px;
+    font-size: 0.9rem;
+  }
+  .header__logo {
+    font-size: 1.4rem;
+  }
+  .header__button {
+    padding: 9px 18px;
+    font-size: 0.85rem;
   }
 }
 
@@ -320,47 +334,199 @@
   .header {
     padding: 10px 0;
   }
-
   .header__container {
-    padding: 0 15px;
+    width: 96%;
+    padding: 0 12px;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 10px;
   }
-
   .header__nav {
     order: 3;
     width: 100%;
     justify-content: center;
-    gap: 12px;
+    gap: 10px;
   }
-
   .header__nav-link {
-    padding: 8px 16px;
-    font-size: 0.9rem;
+    padding: 6px 12px;
+    font-size: 0.8rem;
+    white-space: nowrap;
   }
-
   .header__button {
-    padding: 10px 18px;
-    font-size: 0.85rem;
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
-
   .header__logo {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+  }
+  .modal-content {
+    padding: 40px 30px;
+    width: 95%;
+  }
+  .modal-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+  }
+  .modal-contacts {
+    gap: 20px;
+  }
+  .modal-contact {
+    min-width: 130px;
+    padding: 25px 15px;
+  }
+  .modal-icon {
+    width: 45px;
+    height: 45px;
+  }
+  .modal-contact span {
+    font-size: 1rem;
+  }
+  .modal-close {
+    top: 15px;
+    right: 20px;
+    font-size: 35px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-content {
+    padding: 35px 25px;
+  }
+  .modal-contacts {
+    gap: 15px;
+  }
+  .modal-contact {
+    min-width: calc(50% - 15px);
+    padding: 20px 12px;
   }
 }
 
 @media (max-width: 480px) {
-  .header__nav {
+  .header {
+    padding: 8px 0;
+  }
+  .header__container {
+    width: 100%;
+    padding: 0 10px;
     gap: 8px;
   }
-
-  .header__nav-link {
-    padding: 6px 12px;
-    font-size: 0.85rem;
+  .header__nav {
+    gap: 6px;
   }
-
+  .header__nav-link {
+    padding: 5px 10px;
+    font-size: 0.7rem;
+    border-radius: 8px;
+  }
   .header__button {
-    padding: 8px 14px;
-    font-size: 0.8rem;
+    padding: 6px 12px;
+    font-size: 0.7rem;
+    border-radius: 8px;
+  }
+  .header__logo {
+    font-size: 1.2rem;
+  }
+  .modal-content {
+    padding: 30px 20px;
+  }
+  .modal-title {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  .modal-contacts {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .modal-contact {
+    min-width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 15px 20px;
+  }
+  .modal-icon {
+    width: 35px;
+    height: 35px;
+  }
+  .modal-contact span {
+    font-size: 1rem;
+  }
+  .modal-close {
+    top: 12px;
+    right: 15px;
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header__nav-link {
+    padding: 4px 8px;
+    font-size: 0.65rem;
+  }
+  .header__button {
+    padding: 5px 10px;
+    font-size: 0.65rem;
+  }
+  .header__logo {
+    font-size: 1.1rem;
+  }
+  .modal-content {
+    padding: 25px 15px;
+  }
+  .modal-title {
+    font-size: 1.5rem;
+  }
+  .modal-contact {
+    padding: 12px 15px;
+  }
+  .modal-icon {
+    width: 30px;
+    height: 30px;
+  }
+  .modal-contact span {
+    font-size: 0.9rem;
+  }
+  .modal-close {
+    top: 10px;
+    right: 12px;
+    font-size: 30px;
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .header__container {
+    flex-direction: row;
+  }
+  .header__nav {
+    width: auto;
+  }
+}
+
+@media (hover: none) {
+  .header__nav-link:hover,
+  .header__button:hover,
+  .header__logo:hover::after,
+  .modal-contact:hover,
+  .modal-close:hover {
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .header__logo::after,
+  .header__nav-link,
+  .header__button,
+  .header__button::before,
+  .modal-content,
+  .modal-overlay,
+  .modal-close,
+  .modal-contact,
+  .modal-icon {
+    animation: none;
+    transition: none;
   }
 }
